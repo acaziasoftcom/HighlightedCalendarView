@@ -35,7 +35,7 @@ public class CalendarView extends LinearLayout {
 
   private Calendar currentDate = Calendar.getInstance();
 
-  private EventHandler eventHandler;
+  private EventHandler eventHandler = null;
 
   private LinearLayout header;
   private ImageView btnPrev;
@@ -50,7 +50,7 @@ public class CalendarView extends LinearLayout {
       R.color.spring
   };
 
-  int[] monthSeasons = new int[]{2, 2, 3, 3, 3, 0, 0, 0, 1, 1, 1, 2};
+  int[] monthSeasons = new int[] {2, 2, 3, 3, 3, 0, 0, 0, 1, 1, 1, 2};
 
   public CalendarView(Context context) {
     super(context);
@@ -69,6 +69,12 @@ public class CalendarView extends LinearLayout {
   private void initControl(Context context, AttributeSet attributeSet) {
     LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     inflater.inflate(R.layout.control_calendar, this);
+
+    loadDateFormat(attributeSet);
+    assignUiElements();
+    assignClickHandlers();
+
+    updateCalendar();
   }
 
   private void loadDateFormat(AttributeSet attrs) {
@@ -84,7 +90,7 @@ public class CalendarView extends LinearLayout {
     }
   }
 
-  private void assignUiElement() {
+  private void assignUiElements() {
     header = findViewById(R.id.calendar_header);
     btnPrev = findViewById(R.id.calendar_prev_button);
     btnNext = findViewById(R.id.calendar_next_button);
@@ -204,9 +210,9 @@ public class CalendarView extends LinearLayout {
 
       return convertView;
     }
+  }
 
-    private void setEventHandler(EventHandler eh) {
-      eventHandler = eventHandler;
-    }
+  private void setEventHandler(EventHandler eh) {
+    eventHandler = eventHandler;
   }
 }
