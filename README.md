@@ -1,6 +1,7 @@
 # Highlighted Calendar View
 CalendarView, optimized for seasons
 
+![Highlighted Calendar View](https://image.ibb.co/iVM5rd/Screenshot_1530905337.png)
 
 # Installation
 
