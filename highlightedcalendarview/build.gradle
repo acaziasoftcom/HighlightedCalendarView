@@ -1,5 +1,30 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'highlightedcalendarview'
+
+    publishedGroupId = 'com.acaziasoft.highlightedcalendarview'
+
+    libraryName = 'HighlightedCalendarView'
+    artifact = 'highlightedcalendarview'
+
+    libraryDescription = 'Customized Calendar View.'
+
+    siteUrl = 'https://github.com/acaziasoftcom/HighlightedCalendarView'
+    gitUrl = 'https://github.com/acaziasoftcom/HighlightedCalendarView.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'doko'
+    developerName = 'Pham Van Quan'
+    developerEmail = 'doraemonfanclub@gmail.com'
+
+    licenseName = 'MIT'
+    licenseUrl = 'https://opensource.org/licenses/MIT'
+    allLicenses = ["MIT"]
+}
+
 android {
     compileSdkVersion 28
 
@@ -19,7 +44,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
@@ -30,3 +54,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
