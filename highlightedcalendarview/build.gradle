@@ -14,7 +14,7 @@ ext {
     siteUrl = 'https://github.com/acaziasoftcom/HighlightedCalendarView'
     gitUrl = 'https://github.com/acaziasoftcom/HighlightedCalendarView.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.1'
 
     developerId = 'doko'
     developerName = 'Pham Van Quan'
