@@ -91,11 +91,11 @@ public class CalendarView extends LinearLayout {
   }
 
   private void assignUiElements() {
-    header = findViewById(R.id.calendar_header);
+    header = (LinearLayout) findViewById(R.id.calendar_header);
     btnPrev = findViewById(R.id.calendar_prev_button);
     btnNext = findViewById(R.id.calendar_next_button);
     txtDate = findViewById(R.id.calendar_date_display);
-    grid = findViewById(R.id.calendar_grid);
+    grid = (GridView) findViewById(R.id.calendar_grid);
   }
 
   private void assignClickHandlers() {
@@ -134,7 +134,7 @@ public class CalendarView extends LinearLayout {
     ArrayList<Date> cells = new ArrayList<>();
     Calendar calendar = (Calendar) currentDate.clone();
     calendar.set(Calendar.DAY_OF_MONTH, 1);
-    int monthBeginningCell = calendar.get(Calendar.DAY_OF_WEEK - 1);
+    int monthBeginningCell = calendar.get(Calendar.DAY_OF_WEEK) - 1;
 
     calendar.add(Calendar.DAY_OF_MONTH, -monthBeginningCell);
 
@@ -213,6 +213,6 @@ public class CalendarView extends LinearLayout {
   }
 
   private void setEventHandler(EventHandler eh) {
-    eventHandler = eventHandler;
+    eventHandler = eh;
   }
 }
